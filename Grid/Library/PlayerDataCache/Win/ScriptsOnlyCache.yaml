@@ -558,4 +558,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Grid.unity
-  playerPath: C:/Users/abrah/Desktop/Build/Grid.exe
+  playerPath: C:/Users/Akhila/Desktop/Build/Grid.exe

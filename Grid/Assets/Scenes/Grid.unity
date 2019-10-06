@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rows: 9
   cols: 9
-  tileSize: 1.05
+  tileSize: 1
 --- !u!4 &1647032072
 Transform:
   m_ObjectHideFlags: 0
