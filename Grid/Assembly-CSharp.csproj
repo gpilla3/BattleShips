@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\absShips.cs" />
     <Compile Include="Assets\Scripts\Coordinates.cs" />
     <Compile Include="Assets\Scripts\enumPannelstatues.cs" />
     <Compile Include="Assets\Scripts\GridManager.cs" />
