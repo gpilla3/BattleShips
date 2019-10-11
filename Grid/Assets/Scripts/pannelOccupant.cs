@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.ComponentModel;
 
 public class pannelOccupant : MonoBehaviour
 {
     public pannelOccupant Submarine { get; internal set; }
     public pannelOccupant Battleship { get; internal set; }
+    public pannelOccupant Carrier { get; internal set; }
+    public pannelOccupant PatrolBoat { get; internal set; }
+    public pannelOccupant Destroyer { get; internal set; }
 
     // Use this for initialization
     public enum PannelOccupant
     {
-        [Description("o")]
+        [Description("O")]
         Empty,
 
         [Description("B")]
         Battleship,
 
-        [Description("C")]
-        Cruiser,
+        [Description("P")]
+        PatrolBoat,
 
         [Description("D")]
         Destroyer,
@@ -25,7 +27,7 @@ public class pannelOccupant : MonoBehaviour
         [Description("S")]
         Submarine,
 
-        [Description("A")]
+        [Description("C")]
         Carrier,
 
         [Description("X")]
