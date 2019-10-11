@@ -49,7 +49,11 @@ MonoBehaviour:
   vertical: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 31
+=======
+  controlID: 118
+>>>>>>> parent of 6600695... to
 =======
   controlID: 118
 >>>>>>> parent of 6600695... to
@@ -77,7 +81,11 @@ MonoBehaviour:
     height: 731
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 202, y: 222}
+=======
+  m_MinSize: {x: 277, y: 72}
+>>>>>>> parent of 6600695... to
 =======
   m_MinSize: {x: 277, y: 72}
 >>>>>>> parent of 6600695... to
@@ -280,10 +288,13 @@ MonoBehaviour:
     height: 442
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
 =======
+=======
+>>>>>>> parent of 6600695... to
 =======
 >>>>>>> parent of 6600695... to
   m_MinSize: {x: 204, y: 222}
@@ -373,9 +384,15 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: ec2d0000
     m_LastClickedID: 11756
     m_ExpandedIDs: 00000000742d000092330000
+=======
+    m_SelectedIDs: e82d0000
+    m_LastClickedID: 11752
+    m_ExpandedIDs: 000000006e2d00008833000000ca9a3b
+>>>>>>> parent of 6600695... to
 =======
     m_SelectedIDs: e82d0000
     m_LastClickedID: 11752
@@ -415,7 +432,11 @@ MonoBehaviour:
     m_LastClickedID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000742d000092330000
+=======
+    m_ExpandedIDs: 000000006e2d000088330000
+>>>>>>> parent of 6600695... to
 =======
     m_ExpandedIDs: 000000006e2d000088330000
 >>>>>>> parent of 6600695... to
@@ -508,9 +529,15 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 6afbffff
+=======
+      m_SelectedIDs: e82d0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 42fbffff
+>>>>>>> parent of 6600695... to
 =======
       m_SelectedIDs: e82d0000
       m_LastClickedID: 0
