@@ -6,20 +6,18 @@ public class pannelOccupant : MonoBehaviour
 {
     public pannelOccupant Submarine { get; internal set; }
     public pannelOccupant Battleship { get; internal set; }
-    public pannelOccupant Destroyer { get; internal set; }
-    public pannelOccupant PatrolBoat { get; internal set; }
-    public pannelOccupant Carrier { get; internal set; }
 
+    
     public enum PannelOccupant
     {
-        [Description("O")]
+        [Description("o")]
         Empty,
 
         [Description("B")]
         Battleship,
 
-        [Description("P")]
-        PatrolBoat,
+        [Description("C")]
+        Cruiser,
 
         [Description("D")]
         Destroyer,
@@ -27,7 +25,7 @@ public class pannelOccupant : MonoBehaviour
         [Description("S")]
         Submarine,
 
-        [Description("C")]
+        [Description("A")]
         Carrier,
 
         [Description("X")]
