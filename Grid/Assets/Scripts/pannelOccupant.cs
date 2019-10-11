@@ -7,7 +7,10 @@ public class pannelOccupant : MonoBehaviour
     public pannelOccupant Submarine { get; internal set; }
     public pannelOccupant Battleship { get; internal set; }
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> parent of 6600695... to
     public enum PannelOccupant
     {
         [Description("o")]
