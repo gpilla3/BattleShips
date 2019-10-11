@@ -8,7 +8,10 @@ public class pannelOccupant : MonoBehaviour
     public pannelOccupant Battleship { get; internal set; }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+>>>>>>> parent of 6600695... to
 =======
 >>>>>>> parent of 6600695... to
     public enum PannelOccupant
