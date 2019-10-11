@@ -64,13 +64,16 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\absShips.cs" />
     <Compile Include="Assets\Scripts\Battleship.cs" />
+    <Compile Include="Assets\Scripts\Carrier.cs" />
     <Compile Include="Assets\Scripts\Coordinates.cs" />
+    <Compile Include="Assets\Scripts\Destroyer.cs" />
     <Compile Include="Assets\Scripts\enumPannelstatues.cs" />
     <Compile Include="Assets\Scripts\GridManager.cs" />
     <Compile Include="Assets\Scripts\gridPannel.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\pannelOccupant.cs" />
+    <Compile Include="Assets\Scripts\PatrolBoat.cs" />
     <Compile Include="Assets\Scripts\Submarine.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
