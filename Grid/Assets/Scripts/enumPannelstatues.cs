@@ -4,5 +4,5 @@ using System.Collections;
 public class enumPannelstatues : MonoBehaviour
 {
 
-enum pannelStatue { Hit, Miss, Targeted};
+enum PannelStatue { Hit, Miss, Targeted};// enum for missle statues
 }

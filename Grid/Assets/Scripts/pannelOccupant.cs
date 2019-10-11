@@ -7,7 +7,7 @@ public class pannelOccupant : MonoBehaviour
     public pannelOccupant Submarine { get; internal set; }
     public pannelOccupant Battleship { get; internal set; }
 
-    // Use this for initialization
+    
     public enum PannelOccupant
     {
         [Description("o")]
