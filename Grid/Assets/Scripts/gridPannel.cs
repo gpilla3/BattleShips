@@ -22,7 +22,7 @@ public class gridPannel : MonoBehaviour
         {
             return PannelOccupant == PannelOccupant.Battleship
             || PannelOccupant == PannelOccupant.Carrier
-            || PannelOccupant == PannelOccupant.PatrolBoat
+            || PannelOccupant == PannelOccupant.Cruiser
             || PannelOccupant == PannelOccupant.Destroyer
             || PannelOccupant == PannelOccupant.Submarine;
         }
