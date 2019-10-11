@@ -2,22 +2,25 @@
 using System.Collections;
 using System.ComponentModel;
 
-public class pannelOccupant : MonoBehaviour
+public class pannelOccupant : MonoBehaviour// enum values for the pannel occupation 
 {
     public pannelOccupant Submarine { get; internal set; }
     public pannelOccupant Battleship { get; internal set; }
+    public pannelOccupant Destroyer { get; internal set; }
+    public pannelOccupant PatrolBoat { get; internal set; }
+    public pannelOccupant Carrier { get; internal set; }
 
-    // Use this for initialization
-    public enum PannelOccupant
+    public enum PannelOccupant//this has the ships and if the pannel has been attacked or hasent been attacked
+        // description is the value of the said enum
     {
-        [Description("o")]
+        [Description("O")]
         Empty,
 
         [Description("B")]
         Battleship,
 
-        [Description("C")]
-        Cruiser,
+        [Description("P")]
+        PatrolBoat,
 
         [Description("D")]
         Destroyer,
@@ -25,7 +28,7 @@ public class pannelOccupant : MonoBehaviour
         [Description("S")]
         Submarine,
 
-        [Description("A")]
+        [Description("C")]
         Carrier,
 
         [Description("X")]
