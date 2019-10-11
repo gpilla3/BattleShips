@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{C6ACF092-1F58-20C9-8A72-B3244B32DFEC}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MainMenu.cs">
+    <Files>
+      <File FileName="Assets/GridManager.cs" Line="40" Column="7" />
+      <File FileName="Assets/MainMenu.cs" Line="17" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Grid" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="MainMenu.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1699d645-fa63-467f-a9e0-097c4faf7d5a" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

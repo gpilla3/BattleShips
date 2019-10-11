@@ -1,0 +1,62 @@
+
+Grid/Temp/UnityTempFile-fb9a1776b6ef76a4a96d6b5562e1db30
+Grid/Temp/UnityTempFile-d698db10c3bdc8241bddbf41fa6d0541
+Grid/Temp/UnityTempFile-d9a50a0085bbcf04a80521b5c1628072
+Grid/Temp/UnityTempFile-e38e3deb7948e264cb6bcd8c757e5726
+Grid/Temp/UnityTempFile-c2bab85a4eac38046b69b627c483a61b
+Grid/Temp/UnityTempFile-8dfa541e1405a984a88cd091b07a0410
+Grid/Temp/UnityTempFile-724d0f53722394249a56a3d1f4ed0cb0
+Grid/Temp/UnityTempFile-8578e5dcff667ea46b6a40b4be234b26
+Grid/Temp/UnityTempFile-6d80af9cd96cd804c88792eef4599c8c
+Grid/Temp/UnityTempFile-6049955aae1910a428549564fbc3e0c5
+Grid/Temp/UnityTempFile-587e3c7ed114daa41b6da2084f9da9b2
+Grid/Temp/UnityTempFile-44a4785814328bd4da564c67fb76c8e3
+Grid/Temp/UnityTempFile-4bc92b4f2b3ba70459445be1051be426
+Grid/Temp/UnityTempFile-3a7649beb0f99f84cacb4982c5afb75c
+Grid/Temp/UnityTempFile-325af20161887ee4aae5cdc4275cda67
+Grid/Temp/UnityTempFile-1aa160e2a13e62d44acabb41195ff76b
+Grid/Temp/UnityTempFile-18cc50a2477194b4cadf85878d218236
+Grid/Temp/UnityTempFile-0539395af81cdb644a35976912f040ff
+Grid/Temp/UnityTempFile-040a5d5e3f198834180effdb14424a46
+Grid/Temp/UnityLockfile
+Grid/Temp/tempFile.resS
+Grid/Temp/tempFile.resG
+Grid/Temp/tempFile.res
+Grid/Temp/__Backupscenes/0.backup
+Grid/Temp/UnityTempFile-4a4177e112029214c848526dbc6d14d8
+Grid/Library/CurrentLayout-default.dwlt
+Grid/.DS_Store
+
+# ===========================
+# Default Collab Ignore Rules
+# ===========================
+
+# OS Generated
+# ============
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+
+# Visual Studio / MonoDevelop generated
+# =====================================
+[Ee]xported[Oo]bj/
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# Unity generated
+# ===============
+[Oo]bj/
+[Bb]uild
+sysinfo.txt
+*.stackdump
