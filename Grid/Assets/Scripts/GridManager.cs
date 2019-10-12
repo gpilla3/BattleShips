@@ -3,35 +3,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridManager : MonoBehaviour{
+public class GridManager : Singleton<GridManager>{
     [SerializeField]
     private int rows = 9;
     [SerializeField]
     private int cols = 9;
     [SerializeField]
+    private GameObject tile;
+    [SerializeField]
+    private Transform map;
+
     private float tileSize = 1;
+    public Dictionary<Point, TileScript> Tiles { get; set; }
 
     // Start is called before the first frame update
     void Start(){
         GenerateGrid();
     }
 
+    //Function used to generate the grid
     private void GenerateGrid(){
-        GameObject referenceTile = (GameObject)Instantiate(Resources.Load("waterTile"));
-        for (int row = 0; row < rows; row++){
-            for (int col = 0; col < cols; col++){
-                GameObject tile = (GameObject)Instantiate(referenceTile, transform);
-                float posX = col * tileSize;
-                float posY = row * -tileSize;
+        Tiles = new Dictionary<Point, TileScript>();
 
-                tile.transform.position = new Vector2(posX, posY);
+        for (int y = 0; y < rows; y++){
+            for (int x = 0; x < cols; x++){
+                PlaceTile(y, x);
             }
         }
-        Destroy(referenceTile);
 
-        float gridW = cols * tileSize;
-        float gridH = rows * tileSize;
-        transform.position = new Vector2(-gridW/2+tileSize/2, gridH/2-tileSize/2);
+
+        float width = cols * tileSize;
+        float height = rows * tileSize;
+        map.position = new Vector3(-width / 2 + tileSize / 2, height / 2 - tileSize / 2);
+    }
+
+    //Function used to place the tiles
+    private void PlaceTile(int y, int x){
+        TileScript newtile = Instantiate(tile, transform).GetComponent<TileScript>();
+        float posX = x * tileSize;
+        float posY = y * -tileSize;
+
+        newtile.setup(new Point(x, y), new Vector3(posX, posY), map);
     }
 
     // Update is called once per frame
