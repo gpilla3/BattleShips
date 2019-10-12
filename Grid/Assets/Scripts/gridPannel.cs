@@ -27,6 +27,4 @@ public class gridPannel : MonoBehaviour
             || PannelOccupant == PannelOccupant.Submarine;
         }
     }
-
-
 }
