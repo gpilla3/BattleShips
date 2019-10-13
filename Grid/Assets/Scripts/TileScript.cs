@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TileScript : MonoBehaviour{
     public Point GridPos { get; private set; }
-    public List<Point> points = new List<Point>();
+    public bool wait = false;
 
     public void setup(Point gridPos, Vector3 worldPos, Transform parent)
     {
@@ -18,33 +18,60 @@ public class TileScript : MonoBehaviour{
 
     private void OnMouseOver(){
         //Debug.Log(transform.position.x + ", " + transform.position.y);
-        if (!TurnManager.Instance.AIturn1)
+
+        // && GameManager.Instance.ClickedShip != null
+        if (TurnManager.Instance.AIturn1)
+        {
+            GameManager.Instance.ShotsShowAI(true);
+            GameManager.Instance.ShotsShowPlayer(false);
+            LoadShips(true);
+            AIPlace();
+        }
+        else
         {
             if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.HitPrefab != null && GameManager.Instance.MissPrefab != null)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log("HitOrMiss");
+                    GameManager.Instance.ShotsShowAI(false);
+                    GameManager.Instance.ShotsShowPlayer(true);
                     HitOrMiss();
-                    LoadShips(true);
-                    //SceneManager.LoadScene(1);
-                    TurnManager.Instance.AIturn1 = false;
+                    //placeShip();
+                    LoadShips(false);
+                    GameManager.Instance.missiles--;
+                }
+                if (GameManager.Instance.missiles <= 0)
+                {
+                    TurnManager.Instance.AIturn1 = true;
                 }
             }
         }
-        else
+    }
+
+    private void AIPlace()
+    {
+        if (GameManager.Instance.HitPrefab != null && GameManager.Instance.MissPrefab != null)
         {
-            if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedShip != null)
+            int i = 0;
+            while(i < 5)
             {
-                if (Input.GetMouseButtonDown(0))
+                Point tile = AITurn.Instance.PickTile();
+                GameObject obj;
+                if (CheckHit(tile.X, tile.Y))
                 {
-                    Debug.Log("Placing Ship");
-                    //placeShip();
-                    TurnManager.Instance.AIturn1 = true;
-                    LoadShips(false);
-                    //SceneManager.LoadScene(2);
+                    obj = Instantiate(GameManager.Instance.HitPrefab, new Vector3(tile.X, tile.Y), Quaternion.identity);
                 }
+                else
+                {
+                    obj = Instantiate(GameManager.Instance.MissPrefab, new Vector3(tile.X, tile.Y), Quaternion.identity);
+                }
+                GameManager.Instance.AIshots.Add(obj);
+                //obj.transform.SetParent(GridManager.Instance.Tiles[tile].transform);
+                obj.GetComponent<SpriteRenderer>().sortingOrder = GridPos.Y + 20;
+                i++;
             }
+            GameManager.Instance.missiles = 5;
+            TurnManager.Instance.AIturn1 = false;
         }
     }
 
@@ -61,49 +88,23 @@ public class TileScript : MonoBehaviour{
         GameObject obj;
         if (CheckHit((int)transform.position.x, (int)transform.position.y))
         {
-            Debug.Log("HIT");
+            //Debug.Log("HIT");
             obj = Instantiate(GameManager.Instance.HitPrefab, transform.position, Quaternion.identity);
         }
         else
         {
-            Debug.Log("MISS");
+            //Debug.Log("MISS");
             obj = Instantiate(GameManager.Instance.MissPrefab, transform.position, Quaternion.identity);
         }
-        obj.transform.SetParent(transform);
+        GameManager.Instance.Playershots.Add(obj);
+        //obj.transform.SetParent(transform);
         obj.GetComponent<SpriteRenderer>().sortingOrder = GridPos.Y + 20;
-    }
-
-    private void StorePoints()
-    {
-        points.Add(new Point(-3, 3));
-        points.Add(new Point(-2, 3));
-        points.Add(new Point(-1, 3));
-        points.Add(new Point(0, 3));
-        points.Add(new Point(1, 3));
-
-        points.Add(new Point(-4, 1));
-        points.Add(new Point(-3, 1));
-        points.Add(new Point(-2, 1));
-
-        points.Add(new Point(1, 1));
-        points.Add(new Point(2, 1));
-        points.Add(new Point(3, 1));
-
-        points.Add(new Point(-3, -1));
-        points.Add(new Point(-2, -1));
-
-        points.Add(new Point(0, -3));
-        points.Add(new Point(1, -3));
-        points.Add(new Point(2, -3));
-        points.Add(new Point(3, -3));
     }
 
     private bool CheckHit(int x, int y)
     {
-        points.Clear();
-        StorePoints();
-        Debug.Log("Capacity: " + points.Capacity);
-        foreach(Point p in points)
+        //Debug.Log("Capacity: " + points.Capacity);
+        foreach(Point p in GameManager.Instance.points)
         {
             if (p.X == x && p.Y == y)
                 return true;

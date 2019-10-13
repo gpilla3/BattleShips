@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurnManager : Singleton<TurnManager>
 {
-    private bool AIturn;
+    private bool AIturn = false;
 
     public bool AIturn1
     {
@@ -15,7 +15,6 @@ public class TurnManager : Singleton<TurnManager>
         set
         {
             AIturn = value;
-            Debug.Log("Setting Value: " + value);
         }
     }
 }

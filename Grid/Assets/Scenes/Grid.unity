@@ -275,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 87144994}
   m_Layer: 0
-  m_Name: Map
+  m_Name: AIMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +386,7 @@ Transform:
   m_LocalScale: {x: 0.24934539, y: 0.41756868, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &185236176
 GameObject:
@@ -1235,6 +1235,7 @@ GameObject:
   - component: {fileID: 773807069}
   - component: {fileID: 773807068}
   - component: {fileID: 773807070}
+  - component: {fileID: 773807071}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1263,6 +1264,9 @@ MonoBehaviour:
   threeSpace2: {fileID: 1672475809}
   fourSpace: {fileID: 421161373}
   fiveSpace: {fileID: 625308041}
+  AIshots: []
+  Playershots: []
+  missiles: 5
 --- !u!4 &773807069
 Transform:
   m_ObjectHideFlags: 0
@@ -1275,7 +1279,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &773807070
 MonoBehaviour:
@@ -1287,6 +1291,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b29a90bf34818c74796d400387164d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &773807071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773807067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb4c480076664b4eb3b08772fe401f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &822928252
@@ -1444,6 +1460,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822928252}
   m_CullTransparentMesh: 0
+--- !u!1 &885074343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885074344}
+  m_Layer: 0
+  m_Name: PlayerMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &885074344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885074343}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1265798901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1582,7 @@ RectTransform:
   m_Children:
   - {fileID: 492240189}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1789,7 +1835,8 @@ MonoBehaviour:
   rows: 9
   cols: 9
   tile: {fileID: 8024785714640441691, guid: 08240f44e8bef466692342e6df32c504, type: 3}
-  map: {fileID: 87144994}
+  Playermap: {fileID: 885074344}
+  AImap: {fileID: 87144994}
 --- !u!4 &1647032072
 Transform:
   m_ObjectHideFlags: 0
@@ -2249,5 +2296,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -19,8 +19,12 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private GameObject fiveSpace;
 
+    public List<Point> points = new List<Point>();
+    public List<GameObject> AIshots = new List<GameObject>();
+    public List<GameObject> Playershots = new List<GameObject>();
+
     private int shipsNotDestroyed = 5;
-    private int missiles = 5;
+    public int missiles = 5;
 
     public ShipBtn ClickedShip { get; private set; }
 
@@ -88,5 +92,48 @@ public class GameManager : Singleton<GameManager>
     public void shipPlaced()
     {
         ClickedShip = null;
+    }
+
+    public void StorePoints()
+    {
+        points.Add(new Point(-3, 3));
+        points.Add(new Point(-2, 3));
+        points.Add(new Point(-1, 3));
+        points.Add(new Point(0, 3));
+        points.Add(new Point(1, 3));
+
+        points.Add(new Point(-4, 1));
+        points.Add(new Point(-3, 1));
+        points.Add(new Point(-2, 1));
+
+        points.Add(new Point(1, 1));
+        points.Add(new Point(2, 1));
+        points.Add(new Point(3, 1));
+
+        points.Add(new Point(-3, -1));
+        points.Add(new Point(-2, -1));
+
+        points.Add(new Point(0, -3));
+        points.Add(new Point(1, -3));
+        points.Add(new Point(2, -3));
+        points.Add(new Point(3, -3));
+    }
+
+    public void ShotsShowAI(bool val)
+    {
+        Debug.Log("Hiding AI Shots");
+        foreach(GameObject g in AIshots)
+        {
+            g.SetActive(val);
+        }
+    }
+
+    public void ShotsShowPlayer(bool val)
+    {
+        Debug.Log("Hiding Player Shots");
+        foreach (GameObject g in Playershots)
+        {
+            g.SetActive(val);
+        }
     }
 }

@@ -11,7 +11,9 @@ public class GridManager : Singleton<GridManager>{
     [SerializeField]
     private GameObject tile;
     [SerializeField]
-    private Transform map;
+    private Transform Playermap;
+    [SerializeField]
+    private Transform AImap;
     private float tileSize = 1;
 
     public Dictionary<Point, TileScript> Tiles { get; set; }
@@ -33,7 +35,9 @@ public class GridManager : Singleton<GridManager>{
 
         float width = cols * tileSize;
         float height = rows * tileSize;
-        map.position = new Vector3(-width / 2 + tileSize / 2, height / 2 - tileSize / 2);
+        Playermap.position = new Vector3(-width / 2 + tileSize / 2, height / 2 - tileSize / 2);
+        //AImap.position = new Vector3(-width / 2 + tileSize / 2, height / 2 - tileSize / 2);
+        GameManager.Instance.StorePoints();
     }
 
     //Function used to place the tiles
@@ -42,7 +46,8 @@ public class GridManager : Singleton<GridManager>{
         float posX = x * tileSize;
         float posY = y * -tileSize;
 
-        newtile.setup(new Point(x, y), new Vector3(posX, posY), map);
+        newtile.setup(new Point(x, y), new Vector3(posX, posY), Playermap);
+        //newtile.setup(new Point(x, y), new Vector3(posX, posY), AImap);
     }
 
     private void assignShips()
