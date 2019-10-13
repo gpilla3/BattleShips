@@ -19,6 +19,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private GameObject fiveSpace;
 
+    private int shipsNotDestroyed = 5;
+    private int missiles = 5;
+
     public ShipBtn ClickedShip { get; private set; }
 
     public GameObject HitPrefab {
@@ -28,17 +31,52 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-
-    // Start is called before the first frame update
-    void Start()
+    public GameObject MissPrefab
     {
-        
+        get
+        {
+            return missPrefab;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public GameObject TwoSpace
     {
-        
+        get
+        {
+            return twoSpace;
+        }
+    }
+
+    public GameObject ThreeSpace1
+    {
+        get
+        {
+            return threeSpace1;
+        }
+    }
+
+    public GameObject ThreeSpace2
+    {
+        get
+        {
+            return threeSpace2;
+        }
+    }
+
+    public GameObject FourSpace
+    {
+        get
+        {
+            return fourSpace;
+        }
+    }
+
+    public GameObject FiveSpace
+    {
+        get
+        {
+            return fiveSpace;
+        }
     }
 
     public void SelectShip(ShipBtn shipbtn)

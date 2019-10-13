@@ -12,8 +12,8 @@ public class GridManager : Singleton<GridManager>{
     private GameObject tile;
     [SerializeField]
     private Transform map;
-
     private float tileSize = 1;
+
     public Dictionary<Point, TileScript> Tiles { get; set; }
 
     // Start is called before the first frame update
@@ -31,7 +31,6 @@ public class GridManager : Singleton<GridManager>{
             }
         }
 
-
         float width = cols * tileSize;
         float height = rows * tileSize;
         map.position = new Vector3(-width / 2 + tileSize / 2, height / 2 - tileSize / 2);
@@ -46,8 +45,13 @@ public class GridManager : Singleton<GridManager>{
         newtile.setup(new Point(x, y), new Vector3(posX, posY), map);
     }
 
+    private void assignShips()
+    {
+
+    }
+
     // Update is called once per frame
     void Update(){
         
-    } 
+    }
 }
