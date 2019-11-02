@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -26,7 +27,19 @@ public class GameManager : Singleton<GameManager>
     private int shipsNotDestroyed = 5;
     public int missiles = 5;
 
+    public TMPro.TextMeshProUGUI missileText;
+
     public ShipBtn ClickedShip { get; private set; }
+
+    private void Start()
+    {
+        missileText.SetText("Missiles: " + missiles.ToString());
+    }
+
+    private void Update()
+    {
+        missileText.SetText("Missiles: " + missiles.ToString());
+    }
 
     public GameObject HitPrefab {
         get
