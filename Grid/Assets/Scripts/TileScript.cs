@@ -57,7 +57,7 @@ public class TileScript : MonoBehaviour{
             {
                 Point tile = AITurn.Instance.PickTile();
                 GameObject obj;
-                if (CheckHit(tile.X, tile.Y))
+                if (GameManager.Instance.CheckHit(tile.X, tile.Y))
                 {
                     obj = Instantiate(GameManager.Instance.HitPrefab, new Vector3(tile.X, tile.Y), Quaternion.identity);
                 }
@@ -65,9 +65,9 @@ public class TileScript : MonoBehaviour{
                 {
                     obj = Instantiate(GameManager.Instance.MissPrefab, new Vector3(tile.X, tile.Y), Quaternion.identity);
                 }
-                GameManager.Instance.AIshots.Add(obj);
                 //obj.transform.SetParent(GridManager.Instance.Tiles[tile].transform);
                 obj.GetComponent<SpriteRenderer>().sortingOrder = GridPos.Y + 20;
+                GameManager.Instance.AIshots.Add(obj);
                 i++;
             }
             GameManager.Instance.missiles = 5;
@@ -86,7 +86,7 @@ public class TileScript : MonoBehaviour{
 
     private void HitOrMiss(){
         GameObject obj;
-        if (CheckHit((int)transform.position.x, (int)transform.position.y))
+        if (GameManager.Instance.CheckHit((int)transform.position.x, (int)transform.position.y))
         {
             //Debug.Log("HIT");
             obj = Instantiate(GameManager.Instance.HitPrefab, transform.position, Quaternion.identity);
@@ -101,17 +101,7 @@ public class TileScript : MonoBehaviour{
         obj.GetComponent<SpriteRenderer>().sortingOrder = GridPos.Y + 20;
     }
 
-    private bool CheckHit(int x, int y)
-    {
-        //Debug.Log("Capacity: " + points.Capacity);
-        foreach(Point p in GameManager.Instance.points)
-        {
-            if (p.X == x && p.Y == y)
-                return true;
-        }
-        return false;
-    }
-
+    //Used the place the ship on the grid
     private void placeShip(){
         GameObject ship = Instantiate(GameManager.Instance.ClickedShip.ShipPrefab, transform.position, Quaternion.identity);
         ship.GetComponent<SpriteRenderer>().sortingOrder = GridPos.Y + 1;

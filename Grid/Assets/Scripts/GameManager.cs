@@ -134,7 +134,7 @@ public class GameManager : Singleton<GameManager>
 
     public void ShotsShowAI(bool val)
     {
-        Debug.Log("Hiding AI Shots");
+        //Debug.Log("Hiding AI Shots");
         foreach(GameObject g in AIshots)
         {
             g.SetActive(val);
@@ -143,10 +143,20 @@ public class GameManager : Singleton<GameManager>
 
     public void ShotsShowPlayer(bool val)
     {
-        Debug.Log("Hiding Player Shots");
+        //Debug.Log("Hiding Player Shots");
         foreach (GameObject g in Playershots)
         {
             g.SetActive(val);
         }
+    }
+
+    public bool CheckHit(int x, int y)
+    {
+        foreach (Point p in points)
+        {
+            if (p.X == x && p.Y == y)
+                return true;
+        }
+        return false;
     }
 }
