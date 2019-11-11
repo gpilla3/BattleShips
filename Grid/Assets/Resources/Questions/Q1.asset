@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b36a9777ed7b5c41a588ad49698d9f9, type: 3}
+  m_Name: Q1
+  m_EditorClassIdentifier: 
+  _info: What three European countries signed an alliance called the Triple Entrance?
+  _answers:
+  - _info: Germany, Russia, Italy
+    _isCorrect: 0
+  - _info: Italy, Austria, Poland
+    _isCorrect: 0
+  - _info: France, Britain, Russia
+    _isCorrect: 1
+  - _info: France, Spain, Netherlands
+    _isCorrect: 0
+  _answerType: 1
