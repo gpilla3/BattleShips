@@ -8,7 +8,7 @@ public class TileScript : MonoBehaviour{
     public Point GridPos { get; private set; }
     public bool wait = false;
 
-    private IEnumerator IE_WaitFor = null;
+    //private IEnumerator IE_WaitFor = null;
 
     public void setup(Point gridPos, Vector3 worldPos, Transform parent)
     {
@@ -107,6 +107,7 @@ public class TileScript : MonoBehaviour{
             GameManager.Instance.hideStuff();
             GameManager.Instance.lastPos = transform.position;
             GameManager.Instance.lastQuaternion = Quaternion.identity;
+            /*
             if (GameManager.Instance.answeredCorrectly)
             {
                 obj = Instantiate(GameManager.Instance.HitPrefab, transform.position, Quaternion.identity);
@@ -115,6 +116,9 @@ public class TileScript : MonoBehaviour{
             {
                 obj = Instantiate(GameManager.Instance.WrongPrefab, transform.position, Quaternion.identity);
             }
+            */
+            obj = Instantiate(GameManager.Instance.WrongPrefab, transform.position, Quaternion.identity);
+            GameManager.Instance.obj = obj;
         }
         else
         {
@@ -122,6 +126,7 @@ public class TileScript : MonoBehaviour{
             obj = Instantiate(GameManager.Instance.MissPrefab, transform.position, Quaternion.identity);
         }
         GameManager.Instance.Playershots.Add(obj);
+        GameManager.Instance.GridPosY = GridPos.Y;
         //obj.transform.SetParent(transform);
         obj.GetComponent<SpriteRenderer>().sortingOrder = GridPos.Y + 20;
     }

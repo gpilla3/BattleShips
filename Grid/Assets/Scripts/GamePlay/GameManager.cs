@@ -25,6 +25,7 @@ public class GameManager : Singleton<GameManager>
     public Vector3 lastPos = new Vector3();
     public Quaternion lastQuaternion;
     public GameObject obj = null;
+    public int GridPosY;
 
     public bool answeredCorrectly = false;
 
@@ -35,7 +36,7 @@ public class GameManager : Singleton<GameManager>
     public List<GameObject> AIshots = new List<GameObject>();
     public List<GameObject> Playershots = new List<GameObject>();
 
-    private int shipsNotDestroyed = 5;
+    //private int shipsNotDestroyed = 5;
     public int missiles = 5;
 
     public TMPro.TextMeshProUGUI missileText;

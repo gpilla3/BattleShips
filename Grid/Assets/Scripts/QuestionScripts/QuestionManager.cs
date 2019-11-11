@@ -21,7 +21,7 @@ public class QuestionManager : MonoBehaviour
     private List<int> FinishedQuestions = new List<int>();
     private int currentQuestion = 0;
 
-    private IEnumerator IE_WaitTillNextRound = null;
+    //private IEnumerator IE_WaitTillNextRound = null;
 
     private bool IsFinished
     {
@@ -129,6 +129,7 @@ public class QuestionManager : MonoBehaviour
             QuestionHolder.SetActive(false);
             GameManager.Instance.answeredCorrectly = true;
             //GameData.Instance.IncreaseScore();
+            GameManager.Instance.obj = Instantiate(GameManager.Instance.HitPrefab, GameManager.Instance.lastPos, GameManager.Instance.lastQuaternion);
         }
         else
         {
@@ -136,7 +137,10 @@ public class QuestionManager : MonoBehaviour
             GridStuff.SetActive(true);
             QuestionHolder.SetActive(false);
             GameManager.Instance.answeredCorrectly = false;
+            GameManager.Instance.obj = Instantiate(GameManager.Instance.WrongPrefab, GameManager.Instance.lastPos, GameManager.Instance.lastQuaternion);
         }
+        GameManager.Instance.obj.GetComponent<SpriteRenderer>().sortingOrder = GameManager.Instance.GridPosY + 21;
+        GameManager.Instance.Playershots.Add(GameManager.Instance.obj);
         Display();
     }
 
