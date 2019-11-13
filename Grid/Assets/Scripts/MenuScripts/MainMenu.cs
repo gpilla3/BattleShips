@@ -11,7 +11,10 @@ public class MainMenu : MonoBehaviour
     {
         if (DBManager.LoggedIn)
         {
-            playerName.SetText("Welcome " + DBManager.username);
+            if(playerName != null)
+            {
+                playerName.SetText("Welcome " + DBManager.username);
+            }
         }
     }
 

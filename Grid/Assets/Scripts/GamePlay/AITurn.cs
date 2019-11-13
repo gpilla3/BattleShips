@@ -10,13 +10,28 @@ public class AITurn : Singleton<AITurn>
     private Point thePoint;
     private int x, y;
 
-    public Point PickTile(){
+    private bool isPresent(int x, int y)
+    {
+        foreach (var p in selectedPoints)
+        {
+            if (p.X == x && p.Y == y)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Point PickTile()
+    {
         x = Randval.Next(-4, 4);
         y = Randval.Next(-4, 4);
-        foreach(Point p in selectedPoints){
-            if (p.X == x && p.Y == y)
-                PickTile();
+        while (isPresent(x, y))
+        {
+            x = Randval.Next(-4, 4);
+            y = Randval.Next(-4, 4);
         }
+        //dude try and use this function? sure
         Debug.Log("Selected Point: (" + x + ", " + y + ")");
         thePoint = new Point(x, y);
         selectedPoints.Add(thePoint);

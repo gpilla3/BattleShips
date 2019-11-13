@@ -4,10 +4,10 @@ ScriptsOnlyBuild:
     - AITurn
     - AnswerData
     - Database
+    - GameData
     - GameEvents
     - GameManager
     - GridManager
-    - Hover
     - Login
     - MainMenu
     - OptionsMenu
@@ -15,7 +15,6 @@ ScriptsOnlyBuild:
     - Question
     - QuestionManager
     - Registration
-    - ShipBtn
     - TabBetween
     - TileScript
     - TurnManager
@@ -70,15 +69,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9712}
+      Script: {instanceID: 9716}
     - Class: 114
-      Script: {instanceID: 9752}
+      Script: {instanceID: 9756}
     - Class: 114
-      Script: {instanceID: 9920}
+      Script: {instanceID: 9924}
     - Class: 114
-      Script: {instanceID: 9974}
-    - Class: 114
-      Script: {instanceID: 10154}
+      Script: {instanceID: 9976}
     - Class: 114
       Script: {instanceID: 10330}
     - Class: 114
@@ -95,6 +92,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11512}
     - Class: 114
       Script: {instanceID: 11584}
+    - Class: 114
+      Script: {instanceID: 15298}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -102,6 +101,55 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/AIWin.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9716}
+    - Class: 114
+      Script: {instanceID: 9924}
+    - Class: 114
+      Script: {instanceID: 10330}
+    - Class: 114
+      Script: {instanceID: 10708}
+    - Class: 114
+      Script: {instanceID: 10934}
+    - Class: 114
+      Script: {instanceID: 11126}
+    - Class: 114
+      Script: {instanceID: 11192}
+    - Class: 114
+      Script: {instanceID: 11480}
+    - Class: 114
+      Script: {instanceID: 11584}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -133,9 +181,9 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9712}
+      Script: {instanceID: 9716}
     - Class: 114
-      Script: {instanceID: 9920}
+      Script: {instanceID: 9924}
     - Class: 114
       Script: {instanceID: 10330}
     - Class: 114
@@ -194,33 +242,29 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9712}
+      Script: {instanceID: 9716}
     - Class: 114
-      Script: {instanceID: 9752}
+      Script: {instanceID: 9756}
     - Class: 114
-      Script: {instanceID: 9770}
+      Script: {instanceID: 9774}
     - Class: 114
-      Script: {instanceID: 9882}
+      Script: {instanceID: 9886}
     - Class: 114
-      Script: {instanceID: 9920}
+      Script: {instanceID: 9924}
     - Class: 114
-      Script: {instanceID: 9968}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 9974}
+      Script: {instanceID: 10046}
     - Class: 114
-      Script: {instanceID: 10038}
-    - Class: 114
-      Script: {instanceID: 10044}
-    - Class: 114
-      Script: {instanceID: 10128}
-    - Class: 114
-      Script: {instanceID: 10154}
+      Script: {instanceID: 10130}
     - Class: 114
       Script: {instanceID: 10330}
     - Class: 114
       Script: {instanceID: 10506}
     - Class: 114
       Script: {instanceID: 10630}
+    - Class: 114
+      Script: {instanceID: 10692}
     - Class: 114
       Script: {instanceID: 10708}
     - Class: 114
@@ -243,6 +287,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11606}
     - Class: 114
       Script: {instanceID: 11634}
+    - Class: 114
+      Script: {instanceID: 15062}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -279,9 +325,9 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9712}
+      Script: {instanceID: 9716}
     - Class: 114
-      Script: {instanceID: 9920}
+      Script: {instanceID: 9924}
     - Class: 114
       Script: {instanceID: 10330}
     - Class: 114
@@ -330,13 +376,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9712}
+      Script: {instanceID: 9716}
     - Class: 114
-      Script: {instanceID: 9920}
+      Script: {instanceID: 9924}
     - Class: 114
-      Script: {instanceID: 9942}
+      Script: {instanceID: 9946}
     - Class: 114
-      Script: {instanceID: 10128}
+      Script: {instanceID: 10130}
     - Class: 114
       Script: {instanceID: 10330}
     - Class: 114
@@ -387,9 +433,9 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9712}
+      Script: {instanceID: 9716}
     - Class: 114
-      Script: {instanceID: 9920}
+      Script: {instanceID: 9924}
     - Class: 114
       Script: {instanceID: 10330}
     - Class: 114
@@ -430,6 +476,57 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 245
       Script: {instanceID: 0}
+    Assets/Scenes/PlayerWin.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9716}
+    - Class: 114
+      Script: {instanceID: 9924}
+    - Class: 114
+      Script: {instanceID: 10330}
+    - Class: 114
+      Script: {instanceID: 10692}
+    - Class: 114
+      Script: {instanceID: 10708}
+    - Class: 114
+      Script: {instanceID: 10934}
+    - Class: 114
+      Script: {instanceID: 11126}
+    - Class: 114
+      Script: {instanceID: 11192}
+    - Class: 114
+      Script: {instanceID: 11480}
+    - Class: 114
+      Script: {instanceID: 11584}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Register.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -448,13 +545,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9712}
+      Script: {instanceID: 9716}
     - Class: 114
-      Script: {instanceID: 9920}
+      Script: {instanceID: 9924}
     - Class: 114
-      Script: {instanceID: 9942}
+      Script: {instanceID: 9946}
     - Class: 114
-      Script: {instanceID: 10128}
+      Script: {instanceID: 10130}
     - Class: 114
       Script: {instanceID: 10330}
     - Class: 114
@@ -586,12 +683,6 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Hover
-  - hash:
-      serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -656,12 +747,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
-  - hash:
-      serializedVersion: 2
-      Hash: 879afeeed21b49c076cb2336348beae6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ShipBtn
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -772,7 +857,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: c4313e6703e87c433dd80c9d7da13dbd
+      Hash: 323e6763d9c805523293a8bfa5839be0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1085,4 +1170,6 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Grid.unity
   - Assets/Scenes/AIGrid.unity
-  playerPath: D:/CS440/BattleShips/Grid/Executable/Grid.exe
+  - Assets/Scenes/PlayerWin.unity
+  - Assets/Scenes/AIWin.unity
+  playerPath: C:/Users/ginee/OneDrive/Desktop/Builds/Grid.exe

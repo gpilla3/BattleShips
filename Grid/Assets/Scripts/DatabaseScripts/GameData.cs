@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameData : Singleton<GameData>
 {
@@ -14,6 +15,7 @@ public class GameData : Singleton<GameData>
         WWWForm form = new WWWForm();
 
         form.AddField("name", DBManager.username);
+        //DBManager.userScore = GameManager.Instance.correctAnswer;
         form.AddField("score", DBManager.userScore);
 
         WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form);
@@ -26,11 +28,13 @@ public class GameData : Singleton<GameData>
         {
             Debug.Log("Save Failed. Error #" + www.text);
         }
+        //DBManager.Logout();
+        SceneManager.LoadScene(4);
     }
 
     public void IncreaseScore()
     {
-        DBManager.userScore++;
+        //DBManager.userScore += 17;
         CallSaveData();
     }
 }

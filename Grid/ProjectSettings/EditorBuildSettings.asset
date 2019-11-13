@@ -26,7 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AIGrid.unity
     guid: 6d6408944d142bc4fb3fdf3b52b33145
-  - enabled: 0
-    path: Assets/Scenes/Questions.unity
-    guid: 344156e70f7e7844bb49417831e55fc4
+  - enabled: 1
+    path: Assets/Scenes/PlayerWin.unity
+    guid: 0957f14bd2220734e959611456b6b240
+  - enabled: 1
+    path: Assets/Scenes/AIWin.unity
+    guid: f399043b66928f147ad7e040e11f3ec1
   m_configObjects: {}

@@ -124,6 +124,7 @@ public class QuestionManager : MonoBehaviour
         FinishedQuestions.Add(currentQuestion);
         if (isCorrect)
         {
+            DBManager.userScore++;
             Debug.Log("Correct Answer Selected!");
             GridStuff.SetActive(true);
             QuestionHolder.SetActive(false);

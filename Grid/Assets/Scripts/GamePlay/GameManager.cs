@@ -28,6 +28,7 @@ public class GameManager : Singleton<GameManager>
     public int GridPosY;
 
     public bool answeredCorrectly = false;
+    public int correctAnswer = 0;
 
     [SerializeField] public GameObject theGridStuff = null;
     [SerializeField] public GameObject theQuestionHolder = null;
@@ -38,22 +39,29 @@ public class GameManager : Singleton<GameManager>
 
     //private int shipsNotDestroyed = 5;
     public int missiles = 5;
+    public int totalHits = 17;
+    public int totlHitsAI = 17;
 
     public TMPro.TextMeshProUGUI missileText;
 
-    public ShipBtn ClickedShip { get; private set; }
-
     private void Start()
     {
-        missileText.SetText("Missiles: " + missiles.ToString());
+        if (missileText != null)
+        {
+            missileText.SetText("Missiles: " + missiles.ToString());
+        }
     }
 
     private void Update()
     {
-        missileText.SetText("Missiles: " + missiles.ToString());
+        if(missileText != null)
+        {
+            missileText.SetText("Missiles: " + missiles.ToString());
+        }
     }
 
-    public GameObject HitPrefab {
+    public GameObject HitPrefab
+    {
         get
         {
             return hitPrefab;
@@ -116,17 +124,6 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void SelectShip(ShipBtn shipbtn)
-    {
-        this.ClickedShip = shipbtn;
-        //Hover.Instance.Activate(ClickedShip.Sprite);
-    }
-
-    public void shipPlaced()
-    {
-        ClickedShip = null;
-    }
-
     public void StorePoints()
     {
         points.Add(new Point(-3, 3));
@@ -155,7 +152,7 @@ public class GameManager : Singleton<GameManager>
     public void ShotsShowAI(bool val)
     {
         //Debug.Log("Hiding AI Shots");
-        foreach(GameObject g in AIshots)
+        foreach (GameObject g in AIshots)
         {
             g.SetActive(val);
         }
