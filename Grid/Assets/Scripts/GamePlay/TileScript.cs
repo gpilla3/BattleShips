@@ -73,7 +73,7 @@ public class TileScript : MonoBehaviour
                 }
                 if (GameManager.Instance.totlHitsAI == 0)
                 {
-                    SceneManager.LoadScene(8);
+                    SceneManager.LoadScene(7);
                     return;
                 }
                 //obj.transform.SetParent(GridManager.Instance.Tiles[tile].transform);
@@ -84,6 +84,7 @@ public class TileScript : MonoBehaviour
             GameManager.Instance.missiles = 5;
             TurnManager.Instance.AIturn1 = false;
             GameManager.Instance.continueButton.SetActive(true);
+            GameManager.Instance.turn.SetText("Showing Opponents Turn. Click Attack to Continue");
         }
     }
 
@@ -111,7 +112,7 @@ public class TileScript : MonoBehaviour
         GameManager.Instance.totalHits--;
         if (GameManager.Instance.totalHits == 0)
         {
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(6);
             return;
         }
     }

@@ -43,6 +43,7 @@ public class GameManager : Singleton<GameManager>
     public int totlHitsAI = 17;
 
     public TMPro.TextMeshProUGUI missileText;
+    public TMPro.TextMeshProUGUI turn;
 
     private void Start()
     {
@@ -194,6 +195,7 @@ public class GameManager : Singleton<GameManager>
 
     public void continueClicked()
     {
+        turn.SetText("Your Turn. Showing Opponent GRID");
         LoadShips(false);
         continueButton.SetActive(false);
         ShotsShowAI(false);
