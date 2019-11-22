@@ -69,7 +69,6 @@ public class TileScript : MonoBehaviour
                 else
                 {
                     obj = Instantiate(GameManager.Instance.MissPrefab, new Vector3(tile.X, tile.Y), Quaternion.identity);
-                    GameManager.Instance.totlHitsAI--;
                 }
                 if (GameManager.Instance.totlHitsAI == 0)
                 {
@@ -99,6 +98,7 @@ public class TileScript : MonoBehaviour
             GameManager.Instance.lastQuaternion = Quaternion.identity;
             obj = Instantiate(GameManager.Instance.WrongPrefab, transform.position, Quaternion.identity);
             GameManager.Instance.obj = obj;
+            GameManager.Instance.totalHits--;
         }
         else
         {
@@ -109,7 +109,6 @@ public class TileScript : MonoBehaviour
         GameManager.Instance.GridPosY = GridPos.Y;
         //obj.transform.SetParent(transform);
         obj.GetComponent<SpriteRenderer>().sortingOrder = GridPos.Y + 20;
-        GameManager.Instance.totalHits--;
         if (GameManager.Instance.totalHits == 0)
         {
             SceneManager.LoadScene(6);

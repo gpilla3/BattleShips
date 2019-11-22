@@ -129,6 +129,7 @@ public class QuestionManager : MonoBehaviour
             GridStuff.SetActive(true);
             QuestionHolder.SetActive(false);
             GameManager.Instance.answeredCorrectly = true;
+            GameManager.Instance.correctAnswer++;
             //GameData.Instance.IncreaseScore();
             GameManager.Instance.obj = Instantiate(GameManager.Instance.HitPrefab, GameManager.Instance.lastPos, GameManager.Instance.lastQuaternion);
         }

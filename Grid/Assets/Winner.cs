@@ -11,7 +11,7 @@ public class Winner : MonoBehaviour
     {
         if(winnerText != null)
         {
-            winnerText.SetText("You answered " + DBManager.userScore + " questions Correctly.");
+            winnerText.SetText("Your overall Questions Answered has increased to " + DBManager.userScore);
         }
     }
 }
