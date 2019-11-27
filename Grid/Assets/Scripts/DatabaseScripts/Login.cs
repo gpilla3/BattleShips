@@ -1,10 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
+//Used to log the player in to the database
 public class Login : MonoBehaviour
 {
     public TMP_InputField usernameField;
@@ -23,15 +23,18 @@ public class Login : MonoBehaviour
         StartCoroutine(LoginPlayer());
     }
 
+    //Logs the player into the database
     IEnumerator LoginPlayer()
     {
         WWWForm form = new WWWForm();
         form.AddField("name", usernameField.text);
         form.AddField("password", passwordField.text);
 
-        WWW www = new WWW("http://localhost/sqlconnect/login.php", form);
+        WWW www = new WWW("http://localhost/sqlconnect/login.php", form); //Connecting to the database
 
         yield return www;
+
+        //Checks if the user was logged in successfully or not
         if (www.text[0] == '0')
         {
             Debug.Log("User logged in successfully");
@@ -47,6 +50,7 @@ public class Login : MonoBehaviour
         }
     }
 
+    //Used to verify if the inputs are valid
     public void VerifyInputs()
     {
         loginButton.interactable = (usernameField.text.Length >= 4 && passwordField.text.Length >= 6);

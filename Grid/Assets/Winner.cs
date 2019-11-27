@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+//Used to display information about the user once a winner has been found
 public class Winner : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI winnerText;

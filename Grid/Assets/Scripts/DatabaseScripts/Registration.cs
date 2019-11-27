@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Networking;
 
+//Registration class that is used to register a user onto the database
 public class Registration : MonoBehaviour
 {
     public TMP_InputField usernameField;
@@ -31,10 +31,12 @@ public class Registration : MonoBehaviour
         form.AddField("name", usernameField.text);
         form.AddField("password", passwordField.text);
 
-        WWW www = new WWW("http://localhost/sqlconnect/register.php", form);
+        WWW www = new WWW("http://localhost/sqlconnect/register.php", form); //Connecting to he database
 
         yield return www;
-        if(www.text == "0")
+
+        //Checks if the user was logged in successfully or not
+        if (www.text == "0")
         {
             Debug.Log("User created successfully");
             SceneManager.LoadScene(0);
@@ -47,6 +49,7 @@ public class Registration : MonoBehaviour
         }
     }
 
+    //Verify if the input entered in is valid
     public void VerifyInputs()
     {
         submitButton.interactable = (usernameField.text.Length >= 4 && passwordField.text.Length >= 6 && emailField.text.Length >=6);

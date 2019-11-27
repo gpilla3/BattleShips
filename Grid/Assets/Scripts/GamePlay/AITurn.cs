@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using System;
 
+//Used to control the AI's turb
 public class AITurn : Singleton<AITurn>
 {
     public System.Random Randval = new System.Random();
@@ -10,18 +9,20 @@ public class AITurn : Singleton<AITurn>
     private Point thePoint;
     private int x, y;
 
+    //Used to verify if the point that was selected is already selected before
     private bool isPresent(int x, int y)
     {
         foreach (var p in selectedPoints)
         {
             if (p.X == x && p.Y == y)
             {
-                return true;
+                return true; //already selected
             }
         }
-        return false;
+        return false; //unique point on the grid
     }
 
+    //Selecting points on the grid to attack
     public Point PickTile()
     {
         x = Randval.Next(-4, 4);
@@ -31,10 +32,9 @@ public class AITurn : Singleton<AITurn>
             x = Randval.Next(-4, 4);
             y = Randval.Next(-4, 4);
         }
-        //dude try and use this function? sure
         Debug.Log("Selected Point: (" + x + ", " + y + ")");
         thePoint = new Point(x, y);
-        selectedPoints.Add(thePoint);
+        selectedPoints.Add(thePoint); //Adding the points to the selected points list
         return thePoint;
     }
 }

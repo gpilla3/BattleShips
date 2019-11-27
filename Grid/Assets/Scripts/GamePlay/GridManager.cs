@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
+//Used to manage the Grid the players play on
 public class GridManager : Singleton<GridManager>{
     [SerializeField]
     private int rows = 9;
@@ -20,13 +19,14 @@ public class GridManager : Singleton<GridManager>{
 
     // Start is called before the first frame update
     void Start(){
-        GenerateGrid();
+        GenerateGrid(); //Creates the grid the players will play on
     }
 
     //Function used to generate the grid
     private void GenerateGrid(){
         Tiles = new Dictionary<Point, TileScript>();
 
+        //Created a 9 x 9 Grid
         for (int y = 0; y < rows; y++){
             for (int x = 0; x < cols; x++){
                 PlaceTile(y, x);
@@ -36,8 +36,7 @@ public class GridManager : Singleton<GridManager>{
         float width = cols * tileSize;
         float height = rows * tileSize;
         Playermap.position = new Vector3(-width / 2 + tileSize / 2, height / 2 - tileSize / 2);
-        //AImap.position = new Vector3(-width / 2 + tileSize / 2, height / 2 - tileSize / 2);
-        GameManager.Instance.StorePoints();
+        GameManager.Instance.StorePoints(); //Stores the points
     }
 
     //Function used to place the tiles
@@ -47,16 +46,5 @@ public class GridManager : Singleton<GridManager>{
         float posY = y * -tileSize;
 
         newtile.setup(new Point(x, y), new Vector3(posX, posY), Playermap);
-        //newtile.setup(new Point(x, y), new Vector3(posX, posY), AImap);
-    }
-
-    private void assignShips()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update(){
-        
     }
 }

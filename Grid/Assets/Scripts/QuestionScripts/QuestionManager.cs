@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+//Manages the questions that are asked
 public class QuestionManager : MonoBehaviour
 {
 
@@ -20,8 +18,6 @@ public class QuestionManager : MonoBehaviour
     private List<AnswerData> PickedAnswers = new List<AnswerData>();
     private List<int> FinishedQuestions = new List<int>();
     private int currentQuestion = 0;
-
-    //private IEnumerator IE_WaitTillNextRound = null;
 
     private bool IsFinished
     {
@@ -61,8 +57,8 @@ public class QuestionManager : MonoBehaviour
             Debug.Log(question.Info);
         }
 
-        var seed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
-        UnityEngine.Random.InitState(seed);
+        var seed = Random.Range(int.MinValue, int.MaxValue);
+        Random.InitState(seed);
 
         Display();
     }
@@ -111,10 +107,6 @@ public class QuestionManager : MonoBehaviour
         else { Debug.LogWarning("Ups! Something went wrong while trying to display new Question UI Data. GameEvents.UpdateQuestionUI is null. Issue occured in GameManager.Display() method."); }
     }
 
-    IEnumerator WaitTillNextRound()
-    {
-        yield return new WaitForSeconds(GameUtility.ResolutionDelayTime);
-    }
     /// <summary>
     /// Function that is called to accept picked answers and check/display the result.
     /// </summary>
@@ -122,15 +114,16 @@ public class QuestionManager : MonoBehaviour
     {
         bool isCorrect = CheckAnswers();
         FinishedQuestions.Add(currentQuestion);
+        //Correct answer was selected
         if (isCorrect)
         {
+            //Increases the user's score and adds a correct marker to the grid
             DBManager.userScore++;
             Debug.Log("Correct Answer Selected!");
             GridStuff.SetActive(true);
             QuestionHolder.SetActive(false);
             GameManager.Instance.answeredCorrectly = true;
             GameManager.Instance.correctAnswer++;
-            //GameData.Instance.IncreaseScore();
             GameManager.Instance.obj = Instantiate(GameManager.Instance.HitPrefab, GameManager.Instance.lastPos, GameManager.Instance.lastQuaternion);
         }
         else
@@ -143,7 +136,7 @@ public class QuestionManager : MonoBehaviour
         }
         GameManager.Instance.obj.GetComponent<SpriteRenderer>().sortingOrder = GameManager.Instance.GridPosY + 21;
         GameManager.Instance.Playershots.Add(GameManager.Instance.obj);
-        Display();
+        Display(); //Display a new question
     }
 
     /// <summary>
@@ -157,6 +150,7 @@ public class QuestionManager : MonoBehaviour
         }
         return true;
     }
+
     /// <summary>
     /// Function that is called to compare picked answers with question correct answers.
     /// </summary>
@@ -190,6 +184,7 @@ public class QuestionManager : MonoBehaviour
 
     #region Getters
 
+    //Selects a random question
     Question GetRandomQuestion()
     {
         var randomIndex = GetRandomQuestionIndex();
@@ -204,7 +199,7 @@ public class QuestionManager : MonoBehaviour
         {
             do
             {
-                random = UnityEngine.Random.Range(0, Questions.Length);
+                random = Random.Range(0, Questions.Length);
             } while (FinishedQuestions.Contains(random) || random == currentQuestion);
         }
         return random;

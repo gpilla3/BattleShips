@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
+//Used to manage the AI and user turns
 public class TurnManager : Singleton<TurnManager>
 {
     private bool AIturn = false;

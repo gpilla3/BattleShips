@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public TextMeshProUGUI playerName;
-
+    
+    //Display the player's username once they logged in.
     private void Start()
     {
         if (DBManager.LoggedIn)
@@ -33,6 +34,6 @@ public class MainMenu : MonoBehaviour
     public void ExitGame()
     {
         Debug.Log("Exit");
-        Application.Quit();
+        Application.Quit(); //Closes the application
     }
 }

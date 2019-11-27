@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
+//Used to manage the game, such as the ships, points, missiles, etc.
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField]
@@ -37,7 +36,6 @@ public class GameManager : Singleton<GameManager>
     public List<GameObject> AIshots = new List<GameObject>();
     public List<GameObject> Playershots = new List<GameObject>();
 
-    //private int shipsNotDestroyed = 5;
     public int missiles = 5;
     public int totalHits = 17;
     public int totlHitsAI = 17;
@@ -45,6 +43,7 @@ public class GameManager : Singleton<GameManager>
     public TMPro.TextMeshProUGUI missileText;
     public TMPro.TextMeshProUGUI turn;
 
+    //Setting the misssile count
     private void Start()
     {
         if (missileText != null)
@@ -53,6 +52,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    //Updating the missile count
     private void Update()
     {
         if(missileText != null)
@@ -125,6 +125,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    //Stores the points the ships are located at
     public void StorePoints()
     {
         points.Add(new Point(-3, 3));
@@ -150,24 +151,25 @@ public class GameManager : Singleton<GameManager>
         points.Add(new Point(3, -3));
     }
 
+    //Shows the shots the has AI made
     public void ShotsShowAI(bool val)
     {
-        //Debug.Log("Hiding AI Shots");
         foreach (GameObject g in AIshots)
         {
             g.SetActive(val);
         }
     }
 
+    //Shows the shots the player has made
     public void ShotsShowPlayer(bool val)
     {
-        //Debug.Log("Hiding Player Shots");
         foreach (GameObject g in Playershots)
         {
             g.SetActive(val);
         }
     }
 
+    //Checks if a ship has been hit by either the player or AI when called
     public bool CheckHit(int x, int y)
     {
         foreach (Point p in points)
@@ -178,12 +180,14 @@ public class GameManager : Singleton<GameManager>
         return false;
     }
 
+    //Hides the grid when called, mainly used when the player is being asked a question
     public void hideStuff()
     {
         theGridStuff.SetActive(false);
         theQuestionHolder.SetActive(true);
     }
 
+    //Loads the ships when called
     public void LoadShips(bool val)
     {
         TwoSpace.SetActive(val);
@@ -193,6 +197,7 @@ public class GameManager : Singleton<GameManager>
         FiveSpace.SetActive(val);
     }
 
+    //Displays whose turn it is and resets the missile count
     public void continueClicked()
     {
         turn.SetText("Your Turn. Showing Opponent GRID");
