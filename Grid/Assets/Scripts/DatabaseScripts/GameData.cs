@@ -13,22 +13,25 @@ public class GameData : Singleton<GameData>
     //Saves the data onto the database
     IEnumerator SavePlayerData()
     {
-        WWWForm form = new WWWForm();
-
-        form.AddField("name", DBManager.username);
-        form.AddField("score", DBManager.userScore);
-
-        WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form); //Connecting to the database
-
-        yield return www;
-        //Checks if the game was saved correctly
-        if(www.text == "0")
+        if(DBManager.username != null)
         {
-            Debug.Log("Game Saved.");
-        }
-        else
-        {
-            Debug.Log("Save Failed. Error #" + www.text);
+            WWWForm form = new WWWForm();
+
+            form.AddField("name", DBManager.username);
+            form.AddField("score", DBManager.userScore);
+
+            WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form); //Connecting to the database
+
+            yield return www;
+            //Checks if the game was saved correctly
+            if (www.text == "0")
+            {
+                Debug.Log("Game Saved.");
+            }
+            else
+            {
+                Debug.Log("Save Failed. Error #" + www.text);
+            }
         }
         SceneManager.LoadScene(4);
     }

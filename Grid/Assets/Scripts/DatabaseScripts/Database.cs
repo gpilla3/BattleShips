@@ -16,6 +16,12 @@ public class Database : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    //Loads the menu scene without loging anyone in
+    public void OfflineGame()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     //If the exit button gets clicked
     public void ExitGame()
     {
